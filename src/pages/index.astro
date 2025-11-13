@@ -220,11 +220,11 @@ const { empresa, productos } = data;
         <TestReact client:load productos={productos} />
       </section>
 
-      <section class="mb-6 sm:mb-8 md:mb-12 w-full overflow-hidden">
+      <section class="mb-6 sm:mb-8 md:mb-12 w-full">
         <h3 class="text-lg sm:text-xl md:text-2xl font-sans font-semibold text-gray-800 mb-3 sm:mb-4 md:mb-6 tracking-tight px-1">Productos más vendidos</h3>
         <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 w-full">
           {productos.slice(0, 4).map((producto) => (
-            <a href={`/item/${producto.slug}`} class="group bg-white rounded-lg sm:rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out overflow-hidden transform hover:scale-105 hover:-translate-y-0.5">
+            <a href={`/item/${producto.slug}`} class="group bg-white rounded-lg sm:rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 ease-in-out relative z-10 hover:z-20 transform hover:scale-[1.02] hover:-translate-y-1">
               <div class="w-full h-36 sm:h-40 md:h-44 lg:h-48 bg-white flex items-center justify-center overflow-hidden">
                 <img src={producto.imagen} alt={producto.nombre} class="max-w-full max-h-full object-contain transition-all duration-300 ease-in-out group-hover:opacity-90" />
               </div>
@@ -240,41 +240,41 @@ const { empresa, productos } = data;
         </div>
       </section>
 
-      <section class="mb-6 sm:mb-8 md:mb-12 w-full overflow-hidden">
+      <section class="mb-6 sm:mb-8 md:mb-12 w-full">
         <h3 class="text-lg sm:text-xl md:text-2xl font-sans font-semibold text-gray-800 mb-3 sm:mb-4 md:mb-6 tracking-tight px-1">Información de compra</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 w-full">
-          <div class="bg-white rounded-lg sm:rounded-xl shadow-md p-4 sm:p-5 md:p-6 border-2 border-gray-200">
+          <div class="group bg-white rounded-lg sm:rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 ease-in-out p-4 sm:p-5 md:p-6 border-2 border-gray-200 hover:border-[#b91c1c] relative z-10 hover:z-20 transform hover:scale-[1.02] hover:-translate-y-1">
             <div class="flex items-center mb-3 sm:mb-4">
-              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-red-100 rounded-lg flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
-                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-[#b91c1c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-red-100 rounded-lg flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 group-hover:bg-red-200 transition-colors duration-300">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-[#b91c1c] group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
                 </svg>
               </div>
-              <h4 class="text-sm sm:text-base md:text-lg font-sans font-semibold text-gray-800">Métodos de pago</h4>
+              <h4 class="text-sm sm:text-base md:text-lg font-sans font-semibold text-gray-800 group-hover:text-[#b91c1c] transition-colors duration-300">Métodos de pago</h4>
             </div>
             <p class="text-xs sm:text-sm md:text-base font-sans font-normal text-gray-600 leading-relaxed">Aceptamos tarjetas de crédito, débito y transferencias bancarias. Pago seguro garantizado.</p>
           </div>
 
-          <div class="bg-white rounded-lg sm:rounded-xl shadow-md p-4 sm:p-5 md:p-6 border-2 border-gray-200">
+          <div class="group bg-white rounded-lg sm:rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 ease-in-out p-4 sm:p-5 md:p-6 border-2 border-gray-200 hover:border-[#b91c1c] relative z-10 hover:z-20 transform hover:scale-[1.02] hover:-translate-y-1">
             <div class="flex items-center mb-3 sm:mb-4">
-              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-red-100 rounded-lg flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
-                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-[#b91c1c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-red-100 rounded-lg flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 group-hover:bg-red-200 transition-colors duration-300">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-[#b91c1c] group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
                 </svg>
               </div>
-              <h4 class="text-sm sm:text-base md:text-lg font-sans font-semibold text-gray-800">Envío gratuito</h4>
+              <h4 class="text-sm sm:text-base md:text-lg font-sans font-semibold text-gray-800 group-hover:text-[#b91c1c] transition-colors duration-300">Envío gratuito</h4>
             </div>
             <p class="text-xs sm:text-sm md:text-base font-sans font-normal text-gray-600 leading-relaxed">En compras mayores a $500. Entrega rápida en todo México. Seguimiento en tiempo real.</p>
           </div>
 
-          <div class="bg-white rounded-lg sm:rounded-xl shadow-md p-4 sm:p-5 md:p-6 border-2 border-gray-200">
+          <div class="group bg-white rounded-lg sm:rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 ease-in-out p-4 sm:p-5 md:p-6 border-2 border-gray-200 hover:border-[#b91c1c] relative z-10 hover:z-20 transform hover:scale-[1.02] hover:-translate-y-1">
             <div class="flex items-center mb-3 sm:mb-4">
-              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-red-100 rounded-lg flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
-                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-[#b91c1c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-red-100 rounded-lg flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 group-hover:bg-red-200 transition-colors duration-300">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-[#b91c1c] group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                 </svg>
               </div>
-              <h4 class="text-sm sm:text-base md:text-lg font-sans font-semibold text-gray-800">Garantía incluida</h4>
+              <h4 class="text-sm sm:text-base md:text-lg font-sans font-semibold text-gray-800 group-hover:text-[#b91c1c] transition-colors duration-300">Garantía incluida</h4>
             </div>
             <p class="text-xs sm:text-sm md:text-base font-sans font-normal text-gray-600 leading-relaxed">Todos nuestros productos incluyen garantía de 12 meses. Soporte técnico incluido.</p>
           </div>
