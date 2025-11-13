@@ -19,6 +19,9 @@ El sitio muestra información de la empresa *Abastecedora Industrial ABASA*, jun
 ---
 
 ## 🏗️ **Estructura del proyecto**
+
+<img width="369" height="453" alt="image" src="https://github.com/user-attachments/assets/064c0a95-8b62-4b7b-8409-bc933311f910" />
+
 abasa/
 ├─ public/
 │ ├─ images/
