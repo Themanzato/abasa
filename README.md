@@ -54,13 +54,13 @@ npm run preview
 ---
 Características principales
 
-✅ SSR habilitado: los datos del JSON se cargan desde el servidor, optimizando SEO y rendimiento.
-✅ Diseño responsive: desarrollado completamente con Tailwind CSS.
-✅ Búsqueda y filtros dinámicos: implementados en React.
-✅ Rutas dinámicas: cada producto tiene su propia página /item/[slug].
-✅ Metadatos dinámicos: títulos y descripciones generadas automáticamente para SEO y redes sociales.
-✅ Paleta personalizada: tonos de rojo corporativo en lugar de azules.
-✅ Diseño limpio y profesional: layout centrado, header sticky, footer informativo.
+* SSR habilitado: los datos del JSON se cargan desde el servidor, optimizando SEO y rendimiento.
+* Diseño responsive: desarrollado completamente con Tailwind CSS.
+* Búsqueda y filtros dinámicos: implementados en React.
+* Rutas dinámicas: cada producto tiene su propia página /item/[slug].
+* Metadatos dinámicos: títulos y descripciones generadas automáticamente para SEO y redes sociales.
+* Paleta personalizada: tonos de rojo corporativo en lugar de azules.
+* Diseño limpio y profesional: layout centrado, header sticky, footer informativo.
 
 ------
 SEO y Metadatos
@@ -84,11 +84,11 @@ La UI utiliza componentes reutilizables y una paleta cálida basada en tonos roj
 /* Ejemplo de clases Tailwind */
 text-red-700 bg-gray-50 rounded-xl shadow-md hover:bg-red-800 transition
 
-💡 Autor
+* Autor *
 
-👨‍💻 Mario Alberto Arroyo
+- Mario Alberto Arroyo
 Frontend Developer — México
-🌐 https://www.linkedin.com/in/mario-alberto-arroyo-utrera-690876299/
+https://www.linkedin.com/in/mario-alberto-arroyo-utrera-690876299/
 
 -----
 
