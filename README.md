@@ -17,30 +17,18 @@ El sitio muestra información de la empresa *Abastecedora Industrial ABASA*, jun
 | 🌐 Node Adapter | Adaptador para ejecutar SSR con Node.js |
 
 ---
+Capturas de ejemplo:
+<img width="1919" height="853" alt="image" src="https://github.com/user-attachments/assets/9789d7f8-c7ec-43ea-a004-c35960f27d2c" />
+<img width="1898" height="846" alt="image" src="https://github.com/user-attachments/assets/58092902-b4d1-4bac-95cf-0b92968b5a2a" />
+<img width="1754" height="872" alt="image" src="https://github.com/user-attachments/assets/b69e75e5-3dad-4abd-a6ee-0495415ccbc8" />
+<img width="1893" height="856" alt="image" src="https://github.com/user-attachments/assets/f5b74431-9d71-4557-83f4-c61399c38751" />
+
+
+---
 
 ## 🏗️ **Estructura del proyecto**
 
 <img width="369" height="453" alt="image" src="https://github.com/user-attachments/assets/064c0a95-8b62-4b7b-8409-bc933311f910" />
-
-abasa/
-├─ public/
-│ ├─ images/
-│ │ ├─ og-image.jpg
-│ │ └─ productos/...
-│ └─ favicon.svg
-├─ src/
-│ ├─ components/
-│ │ └─ TestReact.jsx
-│ ├─ data/
-│ │ └─ items.json
-│ ├─ pages/
-│ │ ├─ index.astro
-│ │ └─ item/[slug].astro
-│ └─ styles/
-│ └─ global.css
-├─ astro.config.mjs
-├─ package.json
-└─ README.md
 
 ---
 
