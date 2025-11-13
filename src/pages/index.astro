@@ -1,16 +1,15 @@
 ---
-
+import TestReact from '../components/TestReact.jsx';
+import '../styles/global.css';
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <title>Prueba React</title>
+  </head>
+  <body>
+    <h1>Astro + React</h1>
+	<h1 class="text-4xl font-bold text-blue-600">Tailwind v4 funcionando</h1>
+    <TestReact client:load />
+  </body>
 </html>

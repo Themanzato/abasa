@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+/* Tailwind CSS v4*/
+@theme {
+  --color-primary: #3b82f6;
+  --color-secondary: #8b5cf6;
+  
+  --font-family-sans: system-ui, sans-serif;
+  
+  --spacing-custom: 2rem;
+}
