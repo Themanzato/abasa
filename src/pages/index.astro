@@ -1,7 +1,6 @@
 ---
 import "../styles/global.css";
 import TestReact from "../components/TestReact.jsx";
-import WelcomeModal from "../components/WelcomeModal.jsx";
 import data from "../data/items.json";
 
 const { empresa, productos } = data;
@@ -85,8 +84,6 @@ const { empresa, productos } = data;
         </div>
       </div>
     </header>
-
-    <WelcomeModal client:load empresa={empresa} />
 
     <main class="max-w-6xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
       <section class="mb-8 sm:mb-12">
