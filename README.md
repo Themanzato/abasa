@@ -1,5 +1,8 @@
 # Abasa — Plataforma de Suministros Industriales
 
+Deployment activo en Vercel: https://abasa.vercel.app/
+ — SSR habilitado con Astro Node Adapter
+
 **Abasa** es un proyecto desarrollado con **[Astro](https://astro.build)**, **React**, y **Tailwind CSS**, que implementa **SSR (Server-Side Rendering)** para ofrecer una web rápida, moderna y optimizada para SEO.
 
 El sitio muestra información de la empresa *Abastecedora Industrial ABASA*, junto con un catálogo dinámico como ejemplo de productos industriales y de ferretería, con búsqueda, filtros y página de detalle por producto.
