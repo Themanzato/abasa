@@ -17,27 +17,18 @@ El sitio muestra información de la empresa *Abastecedora Industrial ABASA*, jun
 | 🌐 Node Adapter | Adaptador para ejecutar SSR con Node.js |
 
 ---
+Capturas de ejemplo:
+<img width="1919" height="853" alt="image" src="https://github.com/user-attachments/assets/9789d7f8-c7ec-43ea-a004-c35960f27d2c" />
+<img width="1898" height="846" alt="image" src="https://github.com/user-attachments/assets/58092902-b4d1-4bac-95cf-0b92968b5a2a" />
+<img width="1754" height="872" alt="image" src="https://github.com/user-attachments/assets/b69e75e5-3dad-4abd-a6ee-0495415ccbc8" />
+<img width="1893" height="856" alt="image" src="https://github.com/user-attachments/assets/f5b74431-9d71-4557-83f4-c61399c38751" />
+
+
+---
 
 ## 🏗️ **Estructura del proyecto**
-abasa/
-├─ public/
-│ ├─ images/
-│ │ ├─ og-image.jpg
-│ │ └─ productos/...
-│ └─ favicon.svg
-├─ src/
-│ ├─ components/
-│ │ └─ TestReact.jsx
-│ ├─ data/
-│ │ └─ items.json
-│ ├─ pages/
-│ │ ├─ index.astro
-│ │ └─ item/[slug].astro
-│ └─ styles/
-│ └─ global.css
-├─ astro.config.mjs
-├─ package.json
-└─ README.md
+
+<img width="369" height="453" alt="image" src="https://github.com/user-attachments/assets/064c0a95-8b62-4b7b-8409-bc933311f910" />
 
 ---
 
@@ -63,13 +54,13 @@ npm run preview
 ---
 Características principales
 
-✅ SSR habilitado: los datos del JSON se cargan desde el servidor, optimizando SEO y rendimiento.
-✅ Diseño responsive: desarrollado completamente con Tailwind CSS.
-✅ Búsqueda y filtros dinámicos: implementados en React.
-✅ Rutas dinámicas: cada producto tiene su propia página /item/[slug].
-✅ Metadatos dinámicos: títulos y descripciones generadas automáticamente para SEO y redes sociales.
-✅ Paleta personalizada: tonos de rojo corporativo en lugar de azules.
-✅ Diseño limpio y profesional: layout centrado, header sticky, footer informativo.
+* SSR habilitado: los datos del JSON se cargan desde el servidor, optimizando SEO y rendimiento.
+* Diseño responsive: desarrollado completamente con Tailwind CSS.
+* Búsqueda y filtros dinámicos: implementados en React.
+* Rutas dinámicas: cada producto tiene su propia página /item/[slug].
+* Metadatos dinámicos: títulos y descripciones generadas automáticamente para SEO y redes sociales.
+* Paleta personalizada: tonos de rojo corporativo en lugar de azules.
+* Diseño limpio y profesional: layout centrado, header sticky, footer informativo.
 
 ------
 SEO y Metadatos
@@ -93,11 +84,11 @@ La UI utiliza componentes reutilizables y una paleta cálida basada en tonos roj
 /* Ejemplo de clases Tailwind */
 text-red-700 bg-gray-50 rounded-xl shadow-md hover:bg-red-800 transition
 
-💡 Autor
+* Autor *
 
-👨‍💻 Mario Alberto Arroyo
+- Mario Alberto Arroyo
 Frontend Developer — México
-🌐 https://www.linkedin.com/in/mario-alberto-arroyo-utrera-690876299/
+https://www.linkedin.com/in/mario-alberto-arroyo-utrera-690876299/
 
 -----
 
