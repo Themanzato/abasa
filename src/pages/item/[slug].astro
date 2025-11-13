@@ -1,0 +1,207 @@
+---
+import data from "../../data/items.json";
+import "../../styles/global.css";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const { productos, empresa } = data;
+
+const { slug } = Astro.params;
+const producto = productos.find((p) => p.slug === slug);
+
+if (!producto) {
+  throw new Error(`Producto no encontrado: ${slug}`);
+}
+
+const productoIndex = productos.findIndex((p) => p.slug === slug);
+const estaEnOferta = productoIndex >= 0 && productoIndex < 3;
+const descuento = estaEnOferta ? 15 + (productoIndex * 5) : 0;
+const precioOriginal = producto.precio;
+const precioConDescuento = estaEnOferta ? precioOriginal * (1 - descuento / 100) : precioOriginal;
+---
+
+<BaseLayout title={`${producto.nombre} | ${empresa.nombre}`} description={producto.descripcion}>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <a href="/" class="inline-flex items-center font-sans font-normal text-sm sm:text-base text-gray-600 hover:text-[#b91c1c] mb-4 sm:mb-8 transition-all duration-300 group">
+      <svg class="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+      Volver al inicio
+    </a>
+
+    <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden">
+      <div class="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 lg:p-10">
+        <div class="w-full h-64 sm:h-80 lg:h-96 bg-white rounded-xl flex items-center justify-center overflow-hidden">
+      <img
+        src={producto.imagen}
+        alt={producto.nombre}
+            class="max-w-full max-h-full object-contain transition-all duration-300 ease-in-out hover:opacity-90"
+          />
+        </div>
+
+        <div class="flex flex-col justify-center">
+          <div class="mb-3 sm:mb-4 flex flex-wrap items-center gap-2 sm:gap-3">
+            <span class="inline-block px-2 sm:px-3 py-1 bg-red-100 text-[#b91c1c] text-xs sm:text-sm font-sans font-semibold rounded-full">
+              {producto.categoria}
+            </span>
+            {estaEnOferta && (
+              <span class="inline-block px-2 sm:px-3 py-1 bg-[#b91c1c] text-white text-xs sm:text-sm font-sans font-semibold rounded-full">
+                -{descuento}% OFF
+              </span>
+            )}
+          </div>
+          
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-sans font-semibold text-gray-800 mb-4 sm:mb-6 tracking-tight">
+        {producto.nombre}
+      </h1>
+          
+          <p class="text-base sm:text-lg font-sans font-normal text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+            {producto.descripcion}
+          </p>
+
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 pt-4 sm:pt-6 border-t border-gray-200">
+            <div>
+              <p class="text-xs sm:text-sm font-sans font-normal text-gray-500 mb-1">Precio</p>
+              <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+                <p class="text-2xl sm:text-3xl font-sans font-semibold text-[#b91c1c]">
+                  ${precioConDescuento.toFixed(2)}
+                </p>
+                {estaEnOferta && (
+                  <p class="text-lg sm:text-xl font-sans font-normal text-gray-400 line-through">
+                    ${precioOriginal.toFixed(2)}
+                  </p>
+                )}
+              </div>
+            </div>
+            <button class="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-[#b91c1c] text-white font-sans font-semibold rounded-lg hover:bg-[#991b1b] transition-all duration-300 ease-in-out shadow-md hover:shadow-lg hover:-translate-y-0.5 text-base sm:text-lg">
+              Contactar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 sm:mt-8 p-4 sm:p-6 lg:p-10 border-t border-gray-200">
+        <div class="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-sans font-semibold text-gray-800 mb-4 sm:mb-6 tracking-tight">Características destacadas</h2>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-[#b91c1c] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="font-sans font-normal text-gray-600 leading-relaxed">Alta calidad y durabilidad comprobada</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-[#b91c1c] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="font-sans font-normal text-gray-600 leading-relaxed">Certificaciones internacionales de seguridad</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-[#b91c1c] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="font-sans font-normal text-gray-600 leading-relaxed">Diseño ergonómico para máximo confort</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-[#b91c1c] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="font-sans font-normal text-gray-600 leading-relaxed">Garantía de satisfacción del 100%</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="text-xl sm:text-2xl font-sans font-semibold text-gray-800 mb-4 sm:mb-6 tracking-tight">Especificaciones técnicas</h2>
+            <dl class="space-y-3">
+              <div class="flex justify-between py-2 border-b border-gray-100">
+                <dt class="font-sans font-normal text-gray-500">Categoría</dt>
+                <dd class="font-sans font-semibold text-gray-800">{producto.categoria}</dd>
+              </div>
+              <div class="flex justify-between py-2 border-b border-gray-100">
+                <dt class="font-sans font-normal text-gray-500">Disponibilidad</dt>
+                <dd class="font-sans font-semibold text-green-600">En stock</dd>
+              </div>
+              <div class="flex justify-between py-2 border-b border-gray-100">
+                <dt class="font-sans font-normal text-gray-500">Garantía</dt>
+                <dd class="font-sans font-semibold text-gray-800">12 meses</dd>
+              </div>
+              <div class="flex justify-between py-2 border-b border-gray-100">
+                <dt class="font-sans font-normal text-gray-500">Envío</dt>
+                <dd class="font-sans font-semibold text-gray-800">Gratis en compras mayores a $500</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 sm:mt-8 p-4 sm:p-6 lg:p-10 border-t border-gray-200">
+        <h2 class="text-xl sm:text-2xl font-sans font-semibold text-gray-800 mb-4 sm:mb-6 tracking-tight">Reseñas de clientes</h2>
+        <div class="space-y-4 sm:space-y-6">
+          <div class="bg-gray-50 rounded-lg p-4 sm:p-5">
+            <div class="flex items-center justify-between mb-3">
+              <div>
+                <p class="font-sans font-semibold text-gray-800">Carlos Mendoza</p>
+                <p class="text-sm font-sans font-normal text-gray-500">Comprador verificado</p>
+              </div>
+              <div class="flex text-yellow-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              </div>
+            </div>
+            <p class="font-sans font-normal text-gray-600 leading-relaxed">Excelente producto, superó mis expectativas. La calidad es excepcional y el precio muy competitivo. Lo recomiendo totalmente para uso industrial profesional.</p>
+          </div>
+
+          <div class="bg-gray-50 rounded-lg p-5">
+            <div class="flex items-center justify-between mb-3">
+              <div>
+                <p class="font-sans font-semibold text-gray-800">María González</p>
+                <p class="text-sm font-sans font-normal text-gray-500">Compradora verificada</p>
+              </div>
+              <div class="flex text-yellow-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              </div>
+            </div>
+            <p class="font-sans font-normal text-gray-600 leading-relaxed">Muy satisfecha con la compra. El producto llegó en perfectas condiciones y el servicio al cliente fue excelente. Sin duda volveré a comprar.</p>
+          </div>
+
+          <div class="bg-gray-50 rounded-lg p-5">
+            <div class="flex items-center justify-between mb-3">
+              <div>
+                <p class="font-sans font-semibold text-gray-800">Roberto Sánchez</p>
+                <p class="text-sm font-sans font-normal text-gray-500">Comprador verificado</p>
+              </div>
+              <div class="flex text-yellow-400">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              </div>
+            </div>
+            <p class="font-sans font-normal text-gray-600 leading-relaxed">Buen producto en general, cumple con lo esperado. La entrega fue rápida y el empaque adecuado. Lo usaré en mi taller.</p>
+          </div>
+        </div>
+
+        <div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200">
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+            <div class="flex items-center">
+              <span class="text-2xl sm:text-3xl font-sans font-semibold text-gray-800">4.7</span>
+              <div class="ml-3 flex text-yellow-400">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              </div>
+            </div>
+            <p class="font-sans font-normal text-gray-600">Basado en 127 reseñas</p>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+</BaseLayout>

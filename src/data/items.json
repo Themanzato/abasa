@@ -1,0 +1,139 @@
+{
+    "empresa": {
+      "nombre": "Abastecedora Industrial",
+      "descripcion": "En Abasa estamos comprometidos con la excelencia. Ofrecemos artículos industriales, ferretería y suministros para empresas de todos los tamaños.",
+      "slogan": "Suministros Industriales y Ferretería",
+      "ubicacion": "México",
+      "telefono": "+52 11 1111 1111",
+      "email": "contacto@abasa.com.mx"
+    },
+    "productos": [
+      {
+        "id": 1,
+        "nombre": "Guantes de seguridad de nitrilo",
+        "slug": "guantes-nitrilo",
+        "categoria": "Seguridad",
+        "precio": 89.99,
+        "descripcion": "Guantes resistentes al desgaste y químicos, ideales para uso industrial.",
+        "imagen": "/images/guantes.jpg"
+      },
+      {
+        "id": 2,
+        "nombre": "Casco de protección industrial",
+        "slug": "casco-industrial",
+        "categoria": "Seguridad",
+        "precio": 249.50,
+        "descripcion": "Casco ligero con certificación ANSI Z89.1, disponible en varios colores.",
+        "imagen": "/images/casco.jpg"
+      },
+      {
+        "id": 3,
+        "nombre": "Llave inglesa ajustable 12\"",
+        "slug": "llave-inglesa",
+        "categoria": "Herramientas",
+        "precio": 179.00,
+        "descripcion": "Llave de acero forjado con mango ergonómico, ajuste suave y preciso.",
+        "imagen": "/images/llave.jpg"
+      },
+      {
+        "id": 4,
+        "nombre": "Aceite lubricante 5L",
+        "slug": "aceite-lubricante",
+        "categoria": "Suministros",
+        "precio": 349.00,
+        "descripcion": "Aceite de alto rendimiento para maquinaria industrial.",
+        "imagen": "/images/aceite.jpg"
+      },
+      {
+        "id": 5,
+        "nombre": "Lentes de seguridad antiempañantes",
+        "slug": "lentes-seguridad",
+        "categoria": "Seguridad",
+        "precio": 125.00,
+        "descripcion": "Lentes de protección con tratamiento antiempañante y protección UV.",
+        "imagen": "/images/lentes.jpg"
+      },
+      {
+        "id": 6,
+        "nombre": "Chaleco reflectante clase 2",
+        "slug": "chaleco-reflectante",
+        "categoria": "Seguridad",
+        "precio": 189.99,
+        "descripcion": "Chaleco de alta visibilidad con bandas reflectantes para trabajo en exteriores.",
+        "imagen": "/images/chaleco.jpg"
+      },
+      {
+        "id": 7,
+        "nombre": "Botas de seguridad con punta de acero",
+        "slug": "botas-seguridad",
+        "categoria": "Seguridad",
+        "precio": 599.00,
+        "descripcion": "Botas industriales con punta de acero y suela antideslizante.",
+        "imagen": "/images/botas.jpg"
+      },
+      {
+        "id": 8,
+        "nombre": "Martillo de bola 2.5 kg",
+        "slug": "martillo-bola",
+        "categoria": "Herramientas",
+        "precio": 245.00,
+        "descripcion": "Martillo de bola profesional con mango de fibra de vidrio.",
+        "imagen": "/images/martillo.jpg"
+      },
+      {
+        "id": 9,
+        "nombre": "Destornillador Phillips y plano set 6 piezas",
+        "slug": "destornilladores-set",
+        "categoria": "Herramientas",
+        "precio": 159.00,
+        "descripcion": "Set completo de destornilladores con mangos ergonómicos antideslizantes.",
+        "imagen": "/images/destornilladores.jpg"
+      },
+      {
+        "id": 10,
+        "nombre": "Taladro inalámbrico 18V",
+        "slug": "taladro-inalambrico",
+        "categoria": "Herramientas",
+        "precio": 1299.00,
+        "descripcion": "Taladro percutor inalámbrico con batería de litio y cargador incluido.",
+        "imagen": "/images/taladro.jpg"
+      },
+      {
+        "id": 11,
+        "nombre": "Alicates universales 8 pulgadas",
+        "slug": "alicates-universales",
+        "categoria": "Herramientas",
+        "precio": 195.00,
+        "descripcion": "Alicates de acero cromado con corte de precisión y mango cómodo.",
+        "imagen": "/images/alicates.jpg"
+      },
+      {
+        "id": 12,
+        "nombre": "Cinta métrica láser 50m",
+        "slug": "cinta-laser",
+        "categoria": "Herramientas",
+        "precio": 425.00,
+        "descripcion": "Medidor láser profesional con pantalla LCD y alcance de 50 metros.",
+        "imagen": "/images/cinta.jpg"
+      },
+      {
+        "id": 13,
+        "nombre": "Pintura epóxica industrial 4L",
+        "slug": "pintura-epoxica",
+        "categoria": "Suministros",
+        "precio": 489.00,
+        "descripcion": "Pintura epóxica de alta resistencia para superficies industriales.",
+        "imagen": "/images/pintura.jpg"
+      },
+      {
+        "id": 14,
+        "nombre": "Soldadura estaño 1kg",
+        "slug": "soldadura-estano",
+        "categoria": "Suministros",
+        "precio": 275.00,
+        "descripcion": "Alambre de soldadura estaño-plomo para trabajos de electrónica y plomería.",
+        "imagen": "/images/estaño.jpg"
+      }
+    ]
+  }
+  
