@@ -25,6 +25,8 @@ Capturas de ejemplo:
 <img width="1898" height="846" alt="image" src="https://github.com/user-attachments/assets/58092902-b4d1-4bac-95cf-0b92968b5a2a" />
 <img width="1754" height="872" alt="image" src="https://github.com/user-attachments/assets/b69e75e5-3dad-4abd-a6ee-0495415ccbc8" />
 <img width="1893" height="856" alt="image" src="https://github.com/user-attachments/assets/f5b74431-9d71-4557-83f4-c61399c38751" />
+<img width="1919" height="850" alt="image" src="https://github.com/user-attachments/assets/53810e46-3000-4d86-9e1b-bdd9f135cbf8" />
+
 
 
 ---
@@ -58,6 +60,7 @@ Características principales
 * Metadatos dinámicos: títulos y descripciones generadas automáticamente para SEO y redes sociales.
 * Paleta personalizada: tonos de rojo corporativo en lugar de azules.
 * Diseño limpio y profesional: layout centrado, header sticky, footer informativo.
+* Paginas de manejo de erroes como 404, 500, 403, 503
 
 ------
 SEO y Metadatos
