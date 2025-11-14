@@ -65,18 +65,35 @@ const { empresa, productos } = data;
   </head>
 
   <body class="min-h-screen flex flex-col bg-gray-50 overflow-x-hidden">
-    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 w-full overflow-x-hidden">
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 w-full overflow-x-hidden shadow-sm backdrop-blur-sm bg-white/95">
       <div class="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 w-full">
-        <div class="flex justify-between items-center h-16">
-          <a href="/" class="text-2xl font-sans font-bold text-gray-800 tracking-tight transition-all duration-300 hover:text-[#b91c1c]">
-            ABASA
+        <div class="flex justify-between items-center min-h-[72px] sm:min-h-[80px]">
+          <a href="/" class="flex items-center gap-2 group">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#b91c1c] to-[#991b1b] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+              <span class="text-white font-sans font-bold text-lg sm:text-xl tracking-tight">A</span>
+            </div>
+            <span class="text-xl sm:text-2xl md:text-3xl font-sans font-bold text-gray-800 tracking-tight transition-all duration-300 group-hover:text-[#b91c1c]">
+              ABASA
+            </span>
           </a>
-          <nav class="hidden md:flex gap-8 items-center">
-            <a href="/" class="text-gray-600 font-sans font-normal hover:text-[#b91c1c] transition-all duration-300">Inicio</a>
-            <a href="#productos" class="text-gray-600 font-sans font-normal hover:text-[#b91c1c] transition-all duration-300">Productos</a>
-            <a href="#contacto" class="text-gray-600 font-sans font-normal hover:text-[#b91c1c] transition-all duration-300">Contacto</a>
+          <nav class="hidden md:flex gap-1 lg:gap-2 items-center">
+            <a href="/" class="px-4 py-2 text-gray-700 font-sans font-medium text-sm lg:text-base rounded-lg hover:bg-red-50 hover:text-[#b91c1c] transition-all duration-300 relative group">
+              <span class="relative z-10">Inicio</span>
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#b91c1c] group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a href="#productos" class="px-4 py-2 text-gray-700 font-sans font-medium text-sm lg:text-base rounded-lg hover:bg-red-50 hover:text-[#b91c1c] transition-all duration-300 relative group">
+              <span class="relative z-10">Productos</span>
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#b91c1c] group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a href="#contacto" class="px-4 py-2 text-gray-700 font-sans font-medium text-sm lg:text-base rounded-lg hover:bg-red-50 hover:text-[#b91c1c] transition-all duration-300 relative group">
+              <span class="relative z-10">Contacto</span>
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#b91c1c] group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a href="#contacto" class="ml-2 px-4 py-2 sm:px-5 sm:py-2.5 bg-[#b91c1c] text-white font-sans font-semibold text-sm lg:text-base rounded-lg hover:bg-[#991b1b] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
+              Contactar
+            </a>
           </nav>
-          <button class="md:hidden text-gray-600 hover:text-[#b91c1c] transition-all duration-300">
+          <button class="md:hidden p-2 text-gray-600 hover:text-[#b91c1c] hover:bg-red-50 rounded-lg transition-all duration-300">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -110,37 +127,37 @@ const { empresa, productos } = data;
         </div>
       </section>
 
-      <section class="mb-6 sm:mb-8 md:mb-12 w-full overflow-hidden">
-        <div class="bg-gradient-to-r from-[#b91c1c] to-[#991b1b] rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg p-3 sm:p-4 md:p-6 text-white overflow-hidden w-full">
+      <section class="mb-6 sm:mb-8 md:mb-12 w-full">
+        <div class="bg-gradient-to-r from-[#b91c1c] to-[#991b1b] rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg p-3 sm:p-4 md:p-6 text-white w-full">
           <div class="mb-2 sm:mb-3 md:mb-4">
             <h3 class="text-lg sm:text-xl md:text-2xl font-sans font-semibold mb-1 tracking-tight">Ofertas especiales</h3>
             <p class="text-xs sm:text-sm font-sans font-normal opacity-90">Descuentos exclusivos en productos seleccionados</p>
           </div>
           
-          <div class="relative w-full overflow-hidden">
-            <div class="overflow-hidden rounded-lg sm:rounded-xl w-full">
+          <div class="relative w-full py-2 sm:py-3">
+            <div class="overflow-x-hidden rounded-lg sm:rounded-xl w-full">
               <div class="flex gap-3 sm:gap-4 animate-scroll w-max">
                 {productos.slice(0, 3).map((producto, index) => {
                   const descuento = 15 + (index * 5);
                   const precioOriginal = producto.precio;
                   const precioDescuento = precioOriginal * (1 - descuento / 100);
                   return (
-                    <a href={`/item/${producto.slug}`} class="flex-shrink-0 w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-all duration-300 ease-in-out">
-                      <div class="relative">
-                        <div class="w-full h-28 sm:h-32 md:h-36 bg-white flex items-center justify-center overflow-hidden">
-                          <img src={producto.imagen} alt={producto.nombre} class="max-w-full max-h-full object-contain transition-all duration-300 ease-in-out hover:opacity-90" />
+                    <a href={`/item/${producto.slug}`} class="group flex-shrink-0 w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300 ease-in-out border-2 border-transparent hover:border-[#b91c1c] relative">
+                      <div class="relative overflow-hidden rounded-t-lg">
+                        <div class="w-full h-28 sm:h-32 md:h-36 bg-white flex items-center justify-center overflow-hidden group-hover:bg-red-50 transition-colors duration-300">
+                          <img src={producto.imagen} alt={producto.nombre} class="max-w-full max-h-full object-contain transition-all duration-300 ease-in-out group-hover:scale-110" />
                         </div>
-                        <div class="absolute top-1 right-1 bg-[#b91c1c] text-white px-1.5 sm:px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-sans font-semibold shadow-md">
+                        <div class="absolute top-1 right-1 bg-[#b91c1c] text-white px-1.5 sm:px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-sans font-semibold shadow-md group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">
                           -{descuento}%
                         </div>
                       </div>
                       <div class="p-2 sm:p-3">
                         <div class="mb-1">
-                          <span class="inline-block px-1 sm:px-1.5 py-0.5 bg-red-100 text-[#b91c1c] text-[10px] sm:text-xs font-sans font-semibold rounded-full">{producto.categoria}</span>
+                          <span class="inline-block px-1 sm:px-1.5 py-0.5 bg-red-100 text-[#b91c1c] text-[10px] sm:text-xs font-sans font-semibold rounded-full group-hover:bg-[#b91c1c] group-hover:text-white transition-colors duration-300">{producto.categoria}</span>
                         </div>
-                        <h4 class="text-xs sm:text-sm font-sans font-semibold text-gray-800 mb-1 line-clamp-2 tracking-tight leading-tight">{producto.nombre}</h4>
+                        <h4 class="text-xs sm:text-sm font-sans font-semibold text-gray-800 mb-1 line-clamp-2 tracking-tight leading-tight group-hover:text-[#b91c1c] transition-colors duration-300">{producto.nombre}</h4>
                         <div class="flex items-center gap-1 sm:gap-1.5 flex-wrap">
-                          <p class="text-sm sm:text-base font-sans font-semibold text-[#b91c1c]">${precioDescuento.toFixed(2)}</p>
+                          <p class="text-sm sm:text-base font-sans font-semibold text-[#b91c1c] group-hover:text-[#991b1b] transition-colors duration-300">${precioDescuento.toFixed(2)}</p>
                           <p class="text-[10px] sm:text-xs font-sans font-normal text-gray-400 line-through">${precioOriginal.toFixed(2)}</p>
                         </div>
                       </div>
@@ -152,22 +169,22 @@ const { empresa, productos } = data;
                   const precioOriginal = producto.precio;
                   const precioDescuento = precioOriginal * (1 - descuento / 100);
                   return (
-                    <a href={`/item/${producto.slug}`} class="flex-shrink-0 w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] bg-white rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-all duration-300 ease-in-out">
-                      <div class="relative">
-                        <div class="w-full h-28 sm:h-32 md:h-36 bg-white flex items-center justify-center overflow-hidden">
-                          <img src={producto.imagen} alt={producto.nombre} class="max-w-full max-h-full object-contain transition-all duration-300 ease-in-out hover:opacity-90" />
+                    <a href={`/item/${producto.slug}`} class="group flex-shrink-0 w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300 ease-in-out border-2 border-transparent hover:border-[#b91c1c] relative">
+                      <div class="relative overflow-hidden rounded-t-lg">
+                        <div class="w-full h-28 sm:h-32 md:h-36 bg-white flex items-center justify-center overflow-hidden group-hover:bg-red-50 transition-colors duration-300">
+                          <img src={producto.imagen} alt={producto.nombre} class="max-w-full max-h-full object-contain transition-all duration-300 ease-in-out group-hover:scale-110" />
                         </div>
-                        <div class="absolute top-1 right-1 bg-[#b91c1c] text-white px-1.5 sm:px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-sans font-semibold shadow-md">
+                        <div class="absolute top-1 right-1 bg-[#b91c1c] text-white px-1.5 sm:px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-sans font-semibold shadow-md group-hover:scale-110 group-hover:shadow-lg transition-all duration-300">
                           -{descuento}%
                         </div>
                       </div>
                       <div class="p-2 sm:p-3">
                         <div class="mb-1">
-                          <span class="inline-block px-1 sm:px-1.5 py-0.5 bg-red-100 text-[#b91c1c] text-[10px] sm:text-xs font-sans font-semibold rounded-full">{producto.categoria}</span>
+                          <span class="inline-block px-1 sm:px-1.5 py-0.5 bg-red-100 text-[#b91c1c] text-[10px] sm:text-xs font-sans font-semibold rounded-full group-hover:bg-[#b91c1c] group-hover:text-white transition-colors duration-300">{producto.categoria}</span>
                         </div>
-                        <h4 class="text-xs sm:text-sm font-sans font-semibold text-gray-800 mb-1 line-clamp-2 tracking-tight leading-tight">{producto.nombre}</h4>
+                        <h4 class="text-xs sm:text-sm font-sans font-semibold text-gray-800 mb-1 line-clamp-2 tracking-tight leading-tight group-hover:text-[#b91c1c] transition-colors duration-300">{producto.nombre}</h4>
                         <div class="flex items-center gap-1 sm:gap-1.5 flex-wrap">
-                          <p class="text-sm sm:text-base font-sans font-semibold text-[#b91c1c]">${precioDescuento.toFixed(2)}</p>
+                          <p class="text-sm sm:text-base font-sans font-semibold text-[#b91c1c] group-hover:text-[#991b1b] transition-colors duration-300">${precioDescuento.toFixed(2)}</p>
                           <p class="text-[10px] sm:text-xs font-sans font-normal text-gray-400 line-through">${precioOriginal.toFixed(2)}</p>
                         </div>
                       </div>

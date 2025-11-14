@@ -16,18 +16,35 @@ const { empresa } = data;
   </head>
 
   <body class="min-h-screen flex flex-col bg-gray-50">
-    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm backdrop-blur-sm bg-white/95">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-          <a href="/" class="text-2xl font-sans font-bold text-gray-800 tracking-tight transition-all duration-300 hover:text-[#b91c1c]">
-            ABASA
+        <div class="flex justify-between items-center min-h-[72px] sm:min-h-[80px]">
+          <a href="/" class="flex items-center gap-2 group">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#b91c1c] to-[#991b1b] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+              <span class="text-white font-sans font-bold text-lg sm:text-xl tracking-tight">A</span>
+            </div>
+            <span class="text-xl sm:text-2xl md:text-3xl font-sans font-bold text-gray-800 tracking-tight transition-all duration-300 group-hover:text-[#b91c1c]">
+              ABASA
+            </span>
           </a>
-          <nav class="hidden md:flex gap-8 items-center">
-            <a href="/" class="text-gray-600 font-sans font-normal hover:text-[#b91c1c] transition-all duration-300">Inicio</a>
-            <a href="#productos" class="text-gray-600 font-sans font-normal hover:text-[#b91c1c] transition-all duration-300">Productos</a>
-            <a href="#contacto" class="text-gray-600 font-sans font-normal hover:text-[#b91c1c] transition-all duration-300">Contacto</a>
+          <nav class="hidden md:flex gap-1 lg:gap-2 items-center">
+            <a href="/" class="px-4 py-2 text-gray-700 font-sans font-medium text-sm lg:text-base rounded-lg hover:bg-red-50 hover:text-[#b91c1c] transition-all duration-300 relative group">
+              <span class="relative z-10">Inicio</span>
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#b91c1c] group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a href="#productos" class="px-4 py-2 text-gray-700 font-sans font-medium text-sm lg:text-base rounded-lg hover:bg-red-50 hover:text-[#b91c1c] transition-all duration-300 relative group">
+              <span class="relative z-10">Productos</span>
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#b91c1c] group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a href="#contacto" class="px-4 py-2 text-gray-700 font-sans font-medium text-sm lg:text-base rounded-lg hover:bg-red-50 hover:text-[#b91c1c] transition-all duration-300 relative group">
+              <span class="relative z-10">Contacto</span>
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#b91c1c] group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a href="#contacto" class="ml-2 px-4 py-2 sm:px-5 sm:py-2.5 bg-[#b91c1c] text-white font-sans font-semibold text-sm lg:text-base rounded-lg hover:bg-[#991b1b] transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
+              Contactar
+            </a>
           </nav>
-          <button class="md:hidden text-gray-600 hover:text-[#b91c1c] transition-all duration-300">
+          <button class="md:hidden p-2 text-gray-600 hover:text-[#b91c1c] hover:bg-red-50 rounded-lg transition-all duration-300">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
