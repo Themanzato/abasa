@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="500 - Error del servidor | ABASA" description="Ha ocurrido un error en el servidor. Por favor, intenta más tarde.">
+  <div class="min-h-[60vh] flex items-center justify-center px-4 sm:px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <div class="mb-6 sm:mb-8">
+        <div class="inline-flex items-center justify-center w-24 h-24 sm:w-32 sm:h-32 bg-red-100 rounded-full mb-4 sm:mb-6">
+          <svg class="w-12 h-12 sm:w-16 sm:h-16 text-[#b91c1c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+          </svg>
+        </div>
+        <h1 class="text-6xl sm:text-7xl md:text-8xl font-sans font-bold text-[#b91c1c] mb-2 sm:mb-4 tracking-tight">500</h1>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-sans font-semibold text-gray-800 mb-3 sm:mb-4 tracking-tight">Error del servidor</h2>
+        <p class="text-base sm:text-lg font-sans font-normal text-gray-600 leading-relaxed mb-6 sm:mb-8">
+          Ha ocurrido un error interno en el servidor. Nuestro equipo ha sido notificado y está trabajando para solucionarlo. Por favor, intenta nuevamente en unos momentos.
+        </p>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+        <a href="/" class="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-[#b91c1c] text-white font-sans font-semibold rounded-lg hover:bg-[#991b1b] transition-all duration-300 ease-in-out shadow-md hover:shadow-lg hover:-translate-y-0.5 text-base sm:text-lg">
+          Volver al inicio
+        </a>
+        <button onclick="window.location.reload()" class="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white text-[#b91c1c] font-sans font-semibold rounded-lg border-2 border-[#b91c1c] hover:bg-red-50 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg hover:-translate-y-0.5 text-base sm:text-lg">
+          Reintentar
+        </button>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
